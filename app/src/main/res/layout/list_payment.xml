@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:id="@+id/card_pertanyaan"
+    app:cardBackgroundColor="#FFFF"
+    app:cardCornerRadius="8dp"
+    app:contentPadding="10dp"
+
+    android:foreground="?selectableItemBackground">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <!-- ImageVIew to display our Course Image -->
+
+        <!-- Text View to display Course Name -->
+
+        <!-- Text VIew to display Course Rating -->
+        <!-- Image used in present in drawable folder -->
+
+        <ImageView
+            android:id="@+id/idIVCourseImage"
+            android:layout_width="72dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="50dp"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/ic_baseline_payment_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/payer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/payer"
+            android:layout_width="95dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+            android:textColor="@color/purple_700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/idIVCourseImage"
+            app:layout_constraintEnd_toStartOf="@+id/amount"
+            app:layout_constraintStart_toEndOf="@+id/idIVCourseImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="105dp"
+            android:layout_height="28dp"
+            android:layout_below="@id/payer"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="50dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+            android:drawablePadding="2dp"
+            android:textColor="@color/purple_200"
+            app:drawableStartCompat="@drawable/ic_baseline_payment_24"
+            app:layout_constraintBottom_toTopOf="@+id/idIVCourseImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/payer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="87dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/purple_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.728"
+            app:layout_constraintStart_toEndOf="@+id/idIVCourseImage"
+            app:layout_constraintTop_toBottomOf="@+id/payer"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

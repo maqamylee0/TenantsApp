@@ -34,7 +34,7 @@
             android:layout_marginStart="50dp"
             android:contentDescription="@string/app_name"
             android:padding="5dp"
-            android:src="@drawable/ic_baseline_payment_24"
+            android:src="@drawable/ic_outline_person_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/payer"
             app:layout_constraintStart_toStartOf="parent"

@@ -4,7 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_700"
     tools:context=".ui.dashboard.Dashboard">
+
+    <ImageView
+        android:id="@+id/idIVCourseImage"
+        android:layout_width="72dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="85dp"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_person_add_24"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/name"
@@ -56,6 +72,7 @@
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="123dp"
         android:text="Add"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,14 +83,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="303dp"
         android:text="Name"
+        android:textSize="20dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idIVCourseImage"
         app:layout_constraintVertical_bias="0.753" />
 
     <TextView
@@ -83,6 +101,8 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="291dp"
         android:text="Amount"
+        android:textSize="20dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -97,6 +117,8 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="305dp"
         android:text="Phone Number"
+        android:textSize="20dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

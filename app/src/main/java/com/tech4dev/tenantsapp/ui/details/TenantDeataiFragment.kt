@@ -1,5 +1,9 @@
 package com.tech4dev.tenantsapp.ui.details
 
+import android.Manifest.permission.CALL_PHONE
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -8,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.gson.Gson
 import com.tech4dev.tenantsapp.*
@@ -56,6 +61,21 @@ class TenantDeataiFragment(var tenant: Tenants) : BottomSheetDialogFragment() {
                 Toast.makeText(requireContext(),"Payment made successfully", Toast.LENGTH_LONG).show()
                 binding.amountPaid.text = null
 
+            }
+            binding.callButton.setOnClickListener{
+
+                if(ActivityCompat.checkSelfPermission(requireContext(),android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(
+                        requireActivity(),
+                        arrayOf(android.Manifest.permission.CALL_PHONE),
+                        101
+                    )
+                }else{
+
+                }
+               var callIntent = Intent(Intent.ACTION_CALL)
+                callIntent.data = Uri.parse("tel:0${tenant.CELL}")
+                startActivity(callIntent)
             }
 
         }

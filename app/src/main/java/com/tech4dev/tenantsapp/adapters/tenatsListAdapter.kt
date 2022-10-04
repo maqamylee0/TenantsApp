@@ -44,39 +44,39 @@ class TenantsListAdapter(
 
     override fun onBindViewHolder(holder: TLViewHolder, position: Int) {
         var tenant = listOfTenants[position]
-        var balance :Int
-        val c = Calendar.getInstance()
-        val sdf = SimpleDateFormat("MM/dd/yyyy HH:mm aa")
-        val getCurrentDateTime = sdf.format(c.time)
-        val getMyTime = "10/4/2022 5:35 PM "
-//        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == 1
-        if (getCurrentDateTime == getMyTime && count == 0){
-          balance =  listOfTenants[position].BALANCE + listOfTenants[position].AMOUNT
-            holder.tenantName.text = listOfTenants[position].NAME
-            holder.tenantBalnce.text = balance.toString()
-            val retrofitService = RetrofitInstance.getRetrofitInstance().create(RetrofitService::class.java)
-            var nbalance = Data(balance.toString())
-
-            var bal = Balance(nbalance)
-            var id = Integer.parseInt(tenant.ID)
-            retrofitService.changeBalance(id.toString(),bal).enqueue(object : Callback<Balance> {
-                override fun onResponse(call: Call<Balance>, response: Response<Balance>) {
-                   Toast.makeText(context,"!st of month", Toast.LENGTH_LONG).show()
-                    count += 1
-                }
-                override fun onFailure(call: Call<Balance>, t: Throwable) {
-//                Toast.makeText(this@DetailsViewModel,"Failed",Toast.LENGTH_LONG).show()
-                    Log.d("APICALLLLLLLLLLLLL","${t}")
-                }
-
-
-
-            })
-
-        }else{
+     //   var balance :Int
+//        val c = Calendar.getInstance()
+//        val sdf = SimpleDateFormat("MM/dd/yyyy HH:mm aa")
+//        val getCurrentDateTime = sdf.format(c.time)
+//        val getMyTime = "10/4/2022 5:35 PM "
+////        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == 1
+//        if (getCurrentDateTime == getMyTime && count == 0){
+//          balance =  listOfTenants[position].BALANCE + listOfTenants[position].AMOUNT
+//            holder.tenantName.text = listOfTenants[position].NAME
+//            holder.tenantBalnce.text = balance.toString()
+//            val retrofitService = RetrofitInstance.getRetrofitInstance().create(RetrofitService::class.java)
+//            var nbalance = Data(balance.toString())
+//
+//            var bal = Balance(nbalance)
+//            var id = Integer.parseInt(tenant.ID)
+//            retrofitService.changeBalance(id.toString(),bal).enqueue(object : Callback<Balance> {
+//                override fun onResponse(call: Call<Balance>, response: Response<Balance>) {
+//                   Toast.makeText(context,"!st of month", Toast.LENGTH_LONG).show()
+//                    count += 1
+//                }
+//                override fun onFailure(call: Call<Balance>, t: Throwable) {
+////                Toast.makeText(this@DetailsViewModel,"Failed",Toast.LENGTH_LONG).show()
+//                    Log.d("APICALLLLLLLLLLLLL","${t}")
+//                }
+//
+//
+//
+//            })
+//
+//        }else{
             holder.tenantName.text = listOfTenants[position].NAME
             holder.tenantBalnce.text =  listOfTenants[position].BALANCE.toString()
-        }
+      //  }
 
 
 

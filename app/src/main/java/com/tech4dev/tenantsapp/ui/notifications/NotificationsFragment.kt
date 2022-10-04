@@ -45,7 +45,7 @@ class NotificationsFragment : Fragment() {
 //                adapter = PaymentListAdapter(it)
 //            }
             binding.rvPayments.layoutManager = LinearLayoutManager(requireContext())
-            binding.rvPayments.adapter = PaymentListAdapter(it)
+            binding.rvPayments.adapter = PaymentListAdapter(it.reversed())
         }
 
 

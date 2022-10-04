@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TenantsApp</string>
+    <string name="app_name">Tenants</string>
     <string name="title_home">Tenants</string>
     <string name="title_dashboard">Add Tenant</string>
     <string name="title_notifications">Payments</string>

@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/purple_700"
+                android:textSize="30dp"
                 android:layout_marginTop="32dp" />
 
 
@@ -151,8 +152,9 @@
         app:cardCornerRadius="8dp"
         app:contentPadding="10dp">
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textView8"
@@ -165,7 +167,7 @@
 
             <EditText
                 android:id="@+id/amount_paid"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter amount"
                 android:textColor="@color/purple_200"
@@ -180,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PAY"
-                android:backgroundTint="@color/teal_700"
+                android:backgroundTint="@color/teal_200"
                 tools:layout_editor_absoluteX="136dp"
                 tools:layout_editor_absoluteY="30dp" />
         </androidx.appcompat.widget.LinearLayoutCompat>

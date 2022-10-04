@@ -1,5 +1,6 @@
 package com.tech4dev.tenantsapp.ui.home
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,19 +35,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.rvTenants.layoutManager = LinearLayoutManager(requireContext())
 
-//        val progress = ProgressDialog(requireContext())
-//        progress.setTitle("Loading")
-//        progress.setMessage("Wait while loading Tenants...")
-//        progress.setCancelable(false) // disable dismiss by tapping outside of the dialog
+        val progress = ProgressDialog(requireContext())
+        progress.setTitle("Loading")
+        progress.setMessage("Wait while loading Tenants...")
+        progress.setCancelable(false) // disable dismiss by tapping outside of the dialog
 //
-//        progress.show()
+       progress.show()
         homeViewModel.tenantsList.observe(viewLifecycleOwner) {
             binding.rvTenants.adapter = TenantsListAdapter(
                 requireContext(),
                 it,
                 childFragmentManager
             )
-//            progress.dismiss()
+            progress.dismiss()
             var adapter2 = TenantsListAdapter(requireContext(),it,childFragmentManager)
 
         }

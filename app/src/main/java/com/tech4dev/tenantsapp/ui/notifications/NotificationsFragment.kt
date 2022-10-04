@@ -1,5 +1,6 @@
 package com.tech4dev.tenantsapp.ui.notifications
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +35,12 @@ class NotificationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         notificationsViewModel = ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
+        val progress = ProgressDialog(requireContext())
+        progress.setTitle("Loading")
+        progress.setMessage("Wait while loading Payments...")
+        progress.setCancelable(false) // disable dismiss by tapping outside of the dialog
+//
+        progress.show()
         notificationsViewModel.getApiDatas()
         notificationsViewModel.paymentList.observe(viewLifecycleOwner) {
 //            binding.rvPayments.apply {
@@ -44,6 +50,8 @@ class NotificationsFragment : Fragment() {
 //                // set the custom adapter to the RecyclerView
 //                adapter = PaymentListAdapter(it)
 //            }
+            progress.dismiss()
+
             binding.rvPayments.layoutManager = LinearLayoutManager(requireContext())
             binding.rvPayments.adapter = PaymentListAdapter(it.reversed())
         }

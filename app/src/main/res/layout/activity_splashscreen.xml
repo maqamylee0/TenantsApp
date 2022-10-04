@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splashscreen">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="242dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="87dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/laucnher" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="315dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginBottom="199dp"
+        android:gravity="center"
+        android:text="Manage Tenants"
+        android:textColor="@color/teal_200"
+        android:textSize="40dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

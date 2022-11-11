@@ -9,6 +9,8 @@ data class Tenants(
     val AMOUNT: Int,
     val CELL:String?,
     val BALANCE: Int,
+    val BALANCEdUP: Int,
+
 
     ):Parcelable {
     constructor(parcel: Parcel) : this(
@@ -17,6 +19,8 @@ data class Tenants(
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
+        parcel.readInt(),
+
 
 
         ) {
@@ -28,6 +32,8 @@ data class Tenants(
         parcel.writeInt(AMOUNT)
         parcel.writeString(CELL)
         parcel.writeInt(BALANCE)
+        parcel.writeInt(BALANCEdUP)
+
 
     }
 

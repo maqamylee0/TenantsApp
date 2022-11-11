@@ -1,6 +1,8 @@
 package com.tech4dev.tenantsapp.ui.home
 
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -28,7 +30,7 @@ class HomeViewModel : ViewModel() {
             }
 
             override fun onFailure(call: retrofit2.Call<List<Tenants>>, t: Throwable) {
-//                Toast.makeText(this,"Faileld to getData ",Toast.LENGTH_LONG).show()
+                Log.d("red","$t")
 
             }
 

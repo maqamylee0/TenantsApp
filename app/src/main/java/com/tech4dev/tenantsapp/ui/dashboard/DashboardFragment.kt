@@ -53,9 +53,13 @@ class DashboardFragment : Fragment() {
     }
 
     private fun createTenant() {
+        var phone = binding.phone.text.toString()
+        if(binding.phone.text.toString() == null){
+             phone = "000000000"
+        }
         val numberAmount: String = (binding.amount.text.toString()).replace(",","")
         val tenant = Tenants( "",binding.name.text.toString(),Integer.parseInt(numberAmount),
-            binding.phone.text.toString(),Integer.parseInt(numberAmount))
+           phone,Integer.parseInt(numberAmount),0)
         dashboardViewModel.sendApiData(tenant)
     }
 }

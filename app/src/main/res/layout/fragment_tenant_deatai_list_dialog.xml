@@ -171,7 +171,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter amount"
                 android:textColor="@color/purple_200"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
+                android:digits="0123456789,"
                 android:textColorHint="@color/black"
                 tools:layout_editor_absoluteX="65dp"
                 tools:layout_editor_absoluteY="-13dp" />

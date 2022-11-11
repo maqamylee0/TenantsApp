@@ -19,6 +19,7 @@ import com.tech4dev.tenantsapp.*
 import com.tech4dev.tenantsapp.databinding.FragmentTenantDeataiListDialogBinding
 import com.tech4dev.tenantsapp.ui.detail.TenantDetailViewModel
 import com.tech4dev.tenantsapp.ui.notifications.NotificationsFragment
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -52,9 +53,13 @@ class TenantDeataiFragment(var tenant: Tenants) : BottomSheetDialogFragment() {
 //        homeViewModel.tenantsList.observe(viewLifecycleOwner) {
 
             binding.txtName.text = tenant.NAME
-            binding.textView10.text = tenant.AMOUNT.toString()
+            val bal1 = NumberFormat.getIntegerInstance().format( tenant.AMOUNT);
+
+            binding.textView10.text =bal1.toString()
             binding.textView4.text =tenant.CELL
-            binding.textView9.text = tenant.BALANCE.toString()
+            val bal2 = NumberFormat.getIntegerInstance().format(tenant.BALANCE);
+
+            binding.textView9.text = bal2.toString()
 
             binding.button2.setOnClickListener{
                 createPayment()
@@ -82,10 +87,12 @@ class TenantDeataiFragment(var tenant: Tenants) : BottomSheetDialogFragment() {
 
         private  fun createPayment() {
             date = Calendar.getInstance().time
-            val payment = Payment(tenant.NAME,Integer.parseInt(binding.amountPaid.text.toString()),
+            val numberAmount: String = (binding.amountPaid.text.toString()).replace(",","")
+
+            val payment = Payment(tenant.NAME,Integer.parseInt(numberAmount),
                 getCurrentDate(date))
             tenantDetailsViewModel.sendPayment(payment)
-            changeBalances(Integer.parseInt(binding.amountPaid.text.toString()))
+            changeBalances(Integer.parseInt(numberAmount))
         }
 
         private  fun changeBalances(paid : Int) {

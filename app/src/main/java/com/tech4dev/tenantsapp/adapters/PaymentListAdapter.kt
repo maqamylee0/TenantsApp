@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tech4dev.tenantsapp.Payment
 import com.tech4dev.tenantsapp.R
+import java.text.NumberFormat
 
-    class PaymentListAdapter(private val listOfPayments: List<Payment>): RecyclerView.Adapter<PaymentListAdapter.PLViewHolder>(){
+class PaymentListAdapter(private val listOfPayments: List<Payment>): RecyclerView.Adapter<PaymentListAdapter.PLViewHolder>(){
 
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PLViewHolder {
@@ -24,7 +25,9 @@ import com.tech4dev.tenantsapp.R
 
         override fun onBindViewHolder(holder: PLViewHolder, position: Int) {
             holder.payer.text = listOfPayments[position].PAYER
-            holder.amount.text = listOfPayments[position].AMOUNT.toString()
+            val bal = NumberFormat.getIntegerInstance().format(listOfPayments[position].AMOUNT);
+
+            holder.amount.text = bal.toString()
             holder.date.text = listOfPayments[position].DATE
 
         }

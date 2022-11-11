@@ -19,6 +19,7 @@ import com.tech4dev.tenantsapp.ui.details.TenantDeataiFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -75,7 +76,8 @@ class TenantsListAdapter(
 //
 //        }else{
             holder.tenantName.text = listOfTenants[position].NAME
-            holder.tenantBalnce.text =  listOfTenants[position].BALANCE.toString()
+            val bal = NumberFormat.getIntegerInstance().format(listOfTenants[position].BALANCE);
+            holder.tenantBalnce.text =  bal.toString()
       //  }
 
 

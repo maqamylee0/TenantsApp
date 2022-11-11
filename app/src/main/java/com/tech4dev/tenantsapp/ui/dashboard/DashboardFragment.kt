@@ -1,6 +1,5 @@
 package com.tech4dev.tenantsapp.ui.dashboard
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-
-import com.tech4dev.tenantsapp.R
 import com.tech4dev.tenantsapp.Tenants
 import com.tech4dev.tenantsapp.databinding.FragmentDashboardBinding
-import com.tech4dev.tenantsapp.ui.home.HomeFragment
+import java.text.NumberFormat
 import java.util.*
 
 class DashboardFragment : Fragment() {
@@ -56,8 +53,9 @@ class DashboardFragment : Fragment() {
     }
 
     private fun createTenant() {
-        val tenant = Tenants( "",binding.name.text.toString(),Integer.parseInt(binding.amount.text.toString()),
-            binding.phone.text.toString(),Integer.parseInt(binding.amount.text.toString()))
+        val numberAmount: String = (binding.amount.text.toString()).replace(",","")
+        val tenant = Tenants( "",binding.name.text.toString(),Integer.parseInt(numberAmount),
+            binding.phone.text.toString(),Integer.parseInt(numberAmount))
         dashboardViewModel.sendApiData(tenant)
     }
 }
